@@ -268,7 +268,7 @@ Via the data visualizations created from proportion tests, we can see that Wake 
 
 Data source: http://www.speechinteraction.org/TNG/TeaEarlGreyHotDatasetCodeBook.pdf
 
-### Stacey
+### Positive and Negative Words in Voice Interactions
 
 ```{r, results='hide', include=FALSE}
 #tidy the data
@@ -314,13 +314,17 @@ plot_bing <- bing_join %>%
       panel.grid.minor.x=element_blank(),
       panel.grid.major.x=element_blank(),
       axis.text.x = element_text(angle = 60, vjust = 0.5, hjust = 0.5),
-      ) 
+      ) +
+  scale_fill_brewer(palette = "Paired")
 print(plot_bing)
 ``` 
 
 ***
+Using the lexicon bing, we performed a sentiment analysis to examine the count of positive and negative connotation of words spoken to the computer (via five main characters) and by the computer to all characters in the show. 
 
-### Stacey 2
+The computer tends to use more negative words. Riker tends to use more positive words. All other main characters analyzed showed equal use of positive or negative words. 
+
+### Emotions Expressed by Words in Voice Interactions
 
 ```{r, results='hide', include=FALSE}
 ###nrc (feelings)
@@ -355,9 +359,10 @@ print(plot_nrc)
 ```
 
 ***
+Using the lexicon NRC, we performed a sentiment analysis to examine the emotional connotation of words spoken to the computer (via five main characters) and by the computer to all characters in the show. 
+The computer tended to express trust and fear most. All other main five characters analyzed expressed trust most often. Beverly was more varied in her emotion-based words, but did express trust most often.
 
-
-### Stacey 3
+### Examination of a Positive to Negative Gradient of Word Connotation
 
 ```{r, results='hide', include=FALSE}
 ###afinn (score)
@@ -399,7 +404,9 @@ print(plot_afinn)
 
 
 ***
+Using the lexicon affin, we performed a sentiment analysis to examine the gradient of emotions (positive: 4 to negative: -4) of words spoken to the computer (via five main characters) and by the computer to all characters in the show. 
 
+The computer and Geordi had more emotional range across the gradient from positive to negative. Data and Riker used words that were on the positive side of the gradient most often. Picard and Beverly used words that were on the negative side of the gradient most often.
 
 
 ```{r, results='hide', include=FALSE}
