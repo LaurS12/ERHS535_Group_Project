@@ -238,7 +238,7 @@ chart_3 <- resp_per_int %>%
 ```
 
 ```{r}
-ggplotly(chart_3, height=300, width=700) 
+ggplotly(chart_3, height=500, width=900) 
 ```
 
 
